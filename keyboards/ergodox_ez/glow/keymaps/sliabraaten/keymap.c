@@ -66,15 +66,15 @@ enum custom_keycodes {
   M_COLEQU_0,
   M_COLEQU_1,
   M_EX_REM_FILL,
-  ST_MACRO_11,
+  M_EX_PST_WDT,
   ST_MACRO_12,
-  ST_MACRO_13,
-  ST_MACRO_14,
-  ST_MACRO_15,
-  ST_MACRO_16,
-  ST_MACRO_17,
-  ST_MACRO_18,
-  ST_MACRO_19,
+  M_EX_PST_FORM,
+  M_EX_PST_VAL,
+  M_EX_SH_COL,
+  M_EX_SH_ROW,
+  M_EX_INS_COL,
+  M_EX_INS_ROW,
+  M_EX_INS_CMNT,
   ST_MACRO_20,
   ST_MACRO_21,
   ST_MACRO_22,
@@ -175,10 +175,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [4] = LAYOUT_ergodox_pretty(
     //EXCEL LAYER
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_15,    ST_MACRO_16,    KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_LEFT),
-    KC_TRANSPARENT, KC_F7,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_7)),M_EX_REM_FILL,                                    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_17,    ST_MACRO_18,    ST_MACRO_19,    KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, M_EX_SH_COL,    M_EX_SH_ROW,    KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_LEFT),
+    KC_TRANSPARENT, KC_F7,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_7)),M_EX_REM_FILL,                                    KC_TRANSPARENT, KC_TRANSPARENT, M_EX_INS_COL,    M_EX_INS_ROW,    M_EX_INS_CMNT,    KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_MINUS)),                                                                KC_TRANSPARENT, LCTL(KC_SPACE), LSFT(KC_SPACE), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_11,    ST_MACRO_12,    ST_MACRO_13,    ST_MACRO_14,    KC_ESCAPE,                                      ST_MACRO_20,    KC_TRANSPARENT, ST_MACRO_21,    ST_MACRO_22,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, M_EX_PST_WDT,    ST_MACRO_12,    M_EX_PST_FORM,    M_EX_PST_VAL,    KC_ESCAPE,                                      ST_MACRO_20,    KC_TRANSPARENT, ST_MACRO_21,    ST_MACRO_22,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 LCTL(KC_0),     LCTL(KC_9),     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
@@ -429,33 +429,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_REM_FILL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_N)); }
     break;
-    case ST_MACRO_11:
+    //EXCEL MACRO TO PASTE ONLY COLUMN  WIDTH TO SELECTED CELLS 
+    case M_EX_PST_WDT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_W)); }
     break;
-    case ST_MACRO_12:
+    //EXCEL MACRO TO PASTE ONLY ROW HEIGHT TO SELECTED CELLS
+    case M_EX_PST_HGHT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_N)); }
     break;
-    case ST_MACRO_13:
+    //EXCEL MACRO TO PASTE ONLY FORMULA TO SELECTED CELLS
+    case M_EX_PST_FORM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_T)); }
     break;
-    case ST_MACRO_14:
+    //EXCEL MACRO T O PASTE ONLY VALUES TO SELECTED CELLS
+    case M_EX_PST_VAL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_V)); }
     break;
-    case ST_MACRO_15:
+    //EXCEL MACRO TO SHOW SELECTED COLUMNS
+    case M_EX_SH_COL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_L)); }
     break;
-    case ST_MACRO_16:
+    //EXCEL MACRO TO SHOW SELECTED ROWS
+    case M_EX_SH_ROW:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_O)); }
     break;
-    case ST_MACRO_17:
+    //EXCEL MACRO TO NSERT COLUMN
+    case M_EX_INS_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
-    case ST_MACRO_18:
+    //EXCEL MACRO TO INSERT ROW 
+    case M_EX_INS_ROW :
     if (record->event.pressed) { SEND_STRING(SS_LSFT(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
-    case ST_MACRO_19:
+    //EXCEL MACRO TO INSERT COMMENT TO SELECTED CELL
+    case M_EX_INS_CMNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_R)) SS_DELAY(100) SS_TAP(X_M)); }
-    break;
+    break;  
     case ST_MACRO_20:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_C)) SS_DELAY(100) SS_LCTL(SS_TAP(X_T)) SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
