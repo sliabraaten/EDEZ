@@ -67,7 +67,7 @@ enum custom_keycodes {
   M_COLEQU_1,
   M_EX_REM_FILL,
   M_EX_PST_WDT,
-  ST_MACRO_12,
+  M_EX_PST_WDT,
   M_EX_PST_FORM,
   M_EX_PST_VAL,
   M_EX_SH_COL,
@@ -75,32 +75,32 @@ enum custom_keycodes {
   M_EX_INS_COL,
   M_EX_INS_ROW,
   M_EX_INS_CMNT,
-  ST_MACRO_20,
-  ST_MACRO_21,
-  ST_MACRO_22,
-  ST_MACRO_23,
-  ST_MACRO_24,
-  ST_MACRO_25,
-  ST_MACRO_26,
-  ST_MACRO_27,
-  ST_MACRO_28,
-  ST_MACRO_29,
-  ST_MACRO_30,
-  ST_MACRO_31,
-  ST_MACRO_32,
-  ST_MACRO_33,
-  ST_MACRO_34,
+  M_EX_SEL_COL,
+  M_EX_DEL_COL,
+  M_EX_DEL_ROW,
+  M_RSS_UPLD_PLC,
+  M_RSS_DWNLD_PLC,
+  M_RSS_PLC_PGRM,
+  M_RSS_PLC_RUN,
+  M_RSS_CLOSE_TAB,
+  M_RSS_XIO,
+  M_RSS_PLC_RUN,
+  M_RSS_ONS,
+  M_RSS_LBL,
+  M_RSS_JMP,
+  M_RSS_BRCH_LVL,
+  M_RSS_VFY_CONT,
   ST_MACRO_35,
-  ST_MACRO_36,
-  ST_MACRO_37,
-  ST_MACRO_38,
-  ST_MACRO_39,
-  ST_MACRO_40,
-  ST_MACRO_41,
-  ST_MACRO_42,
-  ST_MACRO_43,
-  ST_MACRO_44,
-  ST_MACRO_45,
+  M_RSS_COP,
+  M_RSS_OTE,
+  M_RSS_NOP,
+  M_RSS_TOF,
+  M_RSS_VFY_CONT,
+  M_RSS_JSR,
+  M_RSS_CMP,
+  M_RSS_OTL,
+  M_RSS_OTU,
+  M_RSS_RTO,
   ST_MACRO_46,
   ST_MACRO_47,
   ST_MACRO_48,
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LCTL_T(KC_TAB), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     LCMD_T(KC_CAPSLOCK),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_LALT,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(LSFT(KC_O)),                                KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, LT(6,KC_NO),    LT(2,KC_NO),    LT(9,KC_NO),    LT(5,KC_ENTER),                                                                                                 LT(2,KC_SPACE), LT(8,KC_END),   LT(11,KC_NO),   TO(0),          KC_TRANSPARENT,
+    KC_MAC_OPTION(KC_MAC_CMD(8)), LT(6,KC_NO),    LT(2,KC_NO),    LT(9,KC_NO),    LT(5,KC_ENTER),                                                                                                 LT(2,KC_SPACE), LT(8,KC_END),   LT(11,KC_NO),   TO(0),          KC_TRANSPARENT,
                                                                                                     LGUI(KC_SPACE), KC_MAC_CUT,     LCMD(KC_W),     LALT(LGUI(KC_ESCAPE)),
                                                                                                                     KC_MAC_COPY,    LCMD(KC_PGUP),
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_MAC_PASTE,   LCMD(KC_PGDOWN),KC_LCTRL,       LT(4,KC_HOME)
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, M_EX_SH_COL,    M_EX_SH_ROW,    KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_LEFT),
     KC_TRANSPARENT, KC_F7,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_7)),M_EX_REM_FILL,                                    KC_TRANSPARENT, KC_TRANSPARENT, M_EX_INS_COL,    M_EX_INS_ROW,    M_EX_INS_CMNT,    KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_MINUS)),                                                                KC_TRANSPARENT, LCTL(KC_SPACE), LSFT(KC_SPACE), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, M_EX_PST_WDT,    ST_MACRO_12,    M_EX_PST_FORM,    M_EX_PST_VAL,    KC_ESCAPE,                                      ST_MACRO_20,    KC_TRANSPARENT, ST_MACRO_21,    ST_MACRO_22,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, M_EX_PST_WDT,    M_EX_PST_WDT,    M_EX_PST_FORM,    M_EX_PST_VAL,    KC_ESCAPE,                                      M_EX_SEL_COL,    KC_TRANSPARENT, M_EX_DEL_COL,    M_EX_DEL_ROW,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 LCTL(KC_0),     LCTL(KC_9),     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
@@ -219,10 +219,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [8] = LAYOUT_ergodox_pretty(
     //ROCKWELL STUDIO LADDER LAYER
-    ST_MACRO_23,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    ST_MACRO_24,    LCTL(LSFT(KC_F)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F4),                                    ST_MACRO_34,    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_E),     LCTL(KC_R),     KC_TRANSPARENT, ST_MACRO_35,
-    ST_MACRO_25,    LCTL(LSFT(KC_S)),KC_TRANSPARENT, ST_MACRO_26,    ST_MACRO_27,    ST_MACRO_28,                                                                    ST_MACRO_36,    ST_MACRO_37,    KC_TRANSPARENT, ST_MACRO_38,    KC_TRANSPARENT, ST_MACRO_39,
-    ST_MACRO_29,    KC_TRANSPARENT, ST_MACRO_30,    ST_MACRO_31,    ST_MACRO_32,    ST_MACRO_33,    LCTL(KC_D),                                     ST_MACRO_40,    ST_MACRO_41,    ST_MACRO_42,    ST_MACRO_43,    ST_MACRO_44,    KC_TRANSPARENT, ST_MACRO_45,
+    M_RSS_UPLD_PLC,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    M_RSS_DWNLD_PLC,    LCTL(LSFT(KC_F)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F4),                                    M_RSS_VFY_CONT,    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_E),     LCTL(KC_R),     KC_TRANSPARENT, ST_MACRO_35,
+    M_RSS_PLC_PGRM,    LCTL(LSFT(KC_S)),KC_TRANSPARENT, M_RSS_PLC_RUN,    M_RSS_CLOSE_TAB,    M_RSS_XIO,                                                                    M_RSS_COP,    M_RSS_OTE,    KC_TRANSPARENT, M_RSS_NOP,    KC_TRANSPARENT, M_RSS_TOF,
+    M_RSS_PLC_RUN,    KC_TRANSPARENT, M_RSS_ONS,    M_RSS_LBL,    M_RSS_JMP,    M_RSS_BRCH_LVL,    LCTL(KC_D),                                     M_RSS_VFY_CONT,    M_RSS_JSR,    M_RSS_CMP,    M_RSS_OTL,    M_RSS_OTU,    KC_TRANSPARENT, M_RSS_RTO,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
@@ -465,84 +465,111 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_INS_CMNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_R)) SS_DELAY(100) SS_TAP(X_M)); }
     break;  
-    case ST_MACRO_20:
+    //EXCEL MACRO OPEN SELECTION IN A NEW TAB IN EXCEL
+    case M_EX_SEL_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_C)) SS_DELAY(100) SS_LCTL(SS_TAP(X_T)) SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_21:
+    //EXCEL MACRO TO DELETE COLUMN OF CURRENTLY SELECTED CELL(S)
+    case M_EX_DEL_COL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_D) SS_DELAY(100) SS_TAP(X_C)); }
     break;
-    case ST_MACRO_22:
+    //EXCEL MACRO TO DELETE ROW OF CURRENTRLY SELECTED CELL(S)
+    case M_EX_DEL_ROW:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_D) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    case ST_MACRO_23:
+    //STUDIO 5000 MACRO TO UPLOAD PROGRAM FROM PLC
+    case M_RSS_UPLD_PLC:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_C)) SS_DELAY(100) SS_TAP(X_U)); }
     break;
-    case ST_MACRO_24:
+    //STUDIO 5000 MACRO TO DOWNLOAD PROGRAM FROM PLC
+    case M_RSS_DWNLD_PLC:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_C)) SS_DELAY(100) SS_TAP(X_D)); }
     break;
-    case ST_MACRO_25:
+    //STUDIO 5000 CHANGE ONLINE CONTROLLER TO PROGRAM MODE
+    case M_RSS_PLC_PGRM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_C)) SS_DELAY(100) SS_TAP(X_P)); }
     break;
-    case ST_MACRO_26:
+    //STUDIO 5000 CREATE EXAMINE IF CLOSED LADDER LOGIC
+    case M_RSS_XIC:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_C)); }
     break;
-    case ST_MACRO_27:
+    //STUDIO 5000 CREATE EXAMINE IF OPEN LADDER LOGIC
+    case M_RSS_XIO:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_O)); }
     break;
-    case ST_MACRO_28:
+    //STUDIO 5000 INSERT BRANCH
+    case M_RSS_BRANCH:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_INSERT) SS_DELAY(100) SS_TAP(X_DOWN)  SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_29:
+    //STUDIO 5000 CHANGE ONLINE CONTROLLER TO RUN MODE
+    case M_RSS_PLC_RUN:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_C)) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    case ST_MACRO_30:
+    //STUDIO 5000 CREATE ONESHOT IN LADDER LOGIC
+    case M_RSS_ONS:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_S)); }
     break;
-    case ST_MACRO_31:
+    //STUDIO 5000 CREATE LABEL IN LADDER LOGIC    
+    case M_RSS_LBL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_B) SS_DELAY(100) SS_TAP(X_L)); }
     break;
-    case ST_MACRO_32:
+    //STUDIO 5000 CREATE JUMP IN LADDER LOGIC
+    case M_RSS_JMP:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_J) SS_DELAY(100) SS_TAP(X_M) SS_DELAY(100) SS_TAP(X_P)); }
     break;
-    case ST_MACRO_33:
+    //STUDIO 5000 INSERT NEW BRANCH LEVEL IN LADDER LOGIC
+    case M_RSS_BRCH_LVL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_INSERT) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN)  SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_34:
+    //STUDIO 5000 VERIFY ROUTINE  
+    case M_RSS_VFY_ROUT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_L)) SS_DELAY(100) SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    case ST_MACRO_35:
+    //STUDIO 5000 CREATE TIMER ON DELAY IN LADDER LOGIC
+    case M_RSS_TON:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_36:
+    //STUDIO 5000 CREATE COPY TIMER IN LADDER LOGIC
+    case M_RSS_COP:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_C) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_P)); }
     break;
-    case ST_MACRO_37:
+    //STUDIO 5000 CREATE OUTPUT ENERGIZE IN LADDER LOGIC
+    case M_RSS_OTE:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_38:
+    //STUDIO 5000 CREATE NO-OPERATIVE LINE IN LADDER LOGIC
+    case M_RSS_NOP:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_P) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_39:
+    //STUDIO 5000 CREATE TIMER OFF DELAY IN LADDER LOGIC
+    case M_RSS_TOF:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_40:
+    //STUDIO 5000 VERIFY CONTROLLER
+    case M_RSS_VFY_CONT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_L)) SS_DELAY(100) SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_C)); }
     break;
-    case ST_MACRO_41:
+    //STUDIO 5000 CREATE JUMP TO SUBROUTINE IN LADDER LOGIC
+    case M_RSS_JSR:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_J) SS_DELAY(100) SS_TAP(X_S) SS_DELAY(100) SS_TAP(X_R) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_42:
+    //STUDIO 5000 CREATE COMPARE STATEMENT  IN LADDER LOGIC
+    case M_RSS_CMP:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_C) SS_DELAY(100) SS_TAP(X_M) SS_DELAY(100) SS_TAP(X_P)); }
     break;
-    case ST_MACRO_43:
+    //STUDIO 5000 CREATE OUTPUT LATCH IN LADDER LOGIC
+    case M_RSS_OTL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_L)); }
     break;
-    case ST_MACRO_44:
+    //STUDIO  5000 CREATE OUTPUT UNLATCH IN LADDER LOGIC
+    case M_RSS_OTU:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_U)); }
     break;
-    case ST_MACRO_45:
+    //STUDIO 5000 CREATE RTO 
+    case M_RSS_RTO:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_R) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_O)); }
     break;
+    //FACTORYTALK VIEW SE 
     case ST_MACRO_46:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_W)) SS_DELAY(100) SS_TAP(X_M)); }
     break;
