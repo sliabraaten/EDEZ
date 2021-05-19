@@ -126,7 +126,7 @@ enum custom_keycodes {
   M_FTV_FLIP_0,
 };
 
-//MAXIMIM SIZE OF STRING FORM FORMATTING IS 40 CHARACTERS LONG, ANY LONGER USE A MACRO
+//MAXIMUM SIZE OF STRING FORM FORMATTING IS 40 CHARACTERS LONG, ANY LONGER USE A MACRO
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
     //BASE LAYER
@@ -404,15 +404,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_DQUOTES:
     if (record->event.pressed) { SEND_STRING(SS_LSFT(SS_TAP(X_QUOTE)) SS_DELAY(100) SS_LSFT(SS_TAP(X_QUOTE)) SS_DELAY(10) SS_TAP(X_LEFT)); }
     break;
-    //TEXT MACRO TO PRODUCE INSERT EQUALS EX: <= 
+    //TEXT MACRO TO PRODUCE INSERT EQUALS EX: <=
     case M_LEQ:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_LSFT(SS_TAP(X_COMMA)) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
-    //TEXT MACRO TO PRODUCE SEND EQUALS EX: => 
+    //TEXT MACRO TO PRODUCE SEND EQUALS EX: =>
     case M_GEQ:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(100) SS_LSFT(SS_TAP(X_DOT)) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
-    //TEXT MACRO TO PRODUCE COLON EQUALS EX: := 
+    //TEXT MACRO TO PRODUCE COLON EQUALS EX: :=
     case M_COLNEQU:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
@@ -428,7 +428,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_REM_FILL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_N)); }
     break;
-    //EXCEL MACRO TO PASTE ONLY COLUMN  WIDTH TO SELECTED CELLS 
+    //EXCEL MACRO TO PASTE ONLY COLUMN  WIDTH TO SELECTED CELLS
     case M_EX_PST_WDT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_W)); }
     break;
@@ -456,14 +456,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_INS_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
-    //EXCEL MACRO TO INSERT ROW 
+    //EXCEL MACRO TO INSERT ROW
     case M_EX_INS_ROW :
     if (record->event.pressed) { SEND_STRING(SS_LSFT(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
     //EXCEL MACRO TO INSERT COMMENT TO SELECTED CELL
     case M_EX_INS_CMNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_R)) SS_DELAY(100) SS_TAP(X_M)); }
-    break;  
+    break;
     //EXCEL MACRO OPEN SELECTION IN A NEW TAB IN EXCEL
     case M_EX_SEL_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_C)) SS_DELAY(100) SS_LCTL(SS_TAP(X_T)) SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_ENTER)); }
@@ -508,7 +508,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_ONS:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_S)); }
     break;
-    //STUDIO 5000 CREATE LABEL IN LADDER LOGIC    
+    //STUDIO 5000 CREATE LABEL IN LADDER LOGIC
     case M_RSS_LBL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_B) SS_DELAY(100) SS_TAP(X_L)); }
     break;
@@ -520,7 +520,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_BRCH_LVL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_INSERT) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN)  SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    //STUDIO 5000 VERIFY ROUTINE  
+    //STUDIO 5000 VERIFY ROUTINE
     case M_RSS_VFY_ROUT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_L)) SS_DELAY(100) SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_R)); }
     break;
@@ -564,7 +564,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_OTU:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_U)); }
     break;
-    //STUDIO 5000 CREATE RTO 
+    //STUDIO 5000 CREATE RTO
     case M_RSS_RTO:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_R) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_O)); }
     break;
@@ -580,7 +580,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_ROT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_O)) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS VERTICALLY 
+    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS VERTICALLY
     case M_RSS_VERT_SPACE:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_V)); }
     break;
@@ -604,7 +604,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FTV_ZOOM_IN:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_I)); }
     break;
-    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS HORIZONTALLY 
+    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS HORIZONTALLY
     case M_FTV_HORZ_SPACE:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_H)); }
     break;
@@ -660,8 +660,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FTV_FLIP_0:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_0) SS_DELAY(100) SS_TAP(X_ENTER) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-      
-      
+
+
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
