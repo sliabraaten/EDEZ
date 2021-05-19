@@ -109,33 +109,32 @@ enum custom_keycodes {
   M_FTV_BRNG_FRNT,
   M_FTV_ALGN_TOP,
   ST_MACRO_53,
-  ST_MACRO_54,
-  ST_MACRO_55,
-  ST_MACRO_56,
-  ST_MACRO_57,
-  ST_MACRO_58,
-  ST_MACRO_59,
-  ST_MACRO_60,
-  ST_MACRO_61,
-  ST_MACRO_62,
-  ST_MACRO_63,
-  ST_MACRO_64,
-  ST_MACRO_65,
-  ST_MACRO_66,
-  ST_MACRO_67,
-  ST_MACRO_68,
-  ST_MACRO_69,
+  M_FTV_ZOOM_IN,
+  M_FTV_HORZ_SPACE,
+  M_FTV_ALGN_LFT,
+  M_FTV_ALGN_CTR,
+  M_FTV_ALGN_RIGHT,
+  M_FTV_ALGN_MID,
+  M_FTV_FLIP_HORZ,
+  M_FTV_EDIT_PARAM,
+  M_FTV_SND_TO_BK,
+  M_FTV_ALGN_BTTM,
+  M_FTV_FLIP_VERT,
+  M_FTV_ZOOM_OUT,
+  M_FTV_GBL_PARAM,
+  M_FTV_FLIP_1,
+  M_FTV_FLIP_0,
 };
 
-
+//MAXIMUM SIZE OF STRING FORM FORMATTING IS 40 CHARACTERS LONG, ANY LONGER USE A MACRO
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
     //BASE LAYER
-    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_F5,                                          RESET,          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSPACE,
-    KC_TAB,         KC_QUOTE,       KC_COMMA,       KC_DOT,         KC_P,           KC_Y,           KC_ESCAPE,                                      KC_INSERT,      KC_F,           KC_G,           KC_C,           KC_R,           KC_L,           KC_EQUAL,
-    LCTL_T(KC_CAPSLOCK),KC_A,           KC_O,           KC_E,           KC_U,           KC_I,                                                                           KC_D,           KC_H,           KC_T,           KC_N,           KC_S,           KC_MINUS,
-    KC_LALT,        KC_SCOLON,      KC_Q,           KC_J,           KC_K,           KC_X,           KC_PSCREEN,                                     LSFT(KC_RALT),  KC_B,           KC_M,           KC_W,           KC_V,           KC_Z,           KC_SLASH,
-    LSFT(KC_LCTRL), LT(6,KC_NO),    LT(2,KC_NO),    LT(9,KC_NO),    LT(5,KC_ENTER),                                                                                                 LT(2,KC_SPACE), LT(8,KC_END),   LT(10,KC_NO),   TT(1),          KC_BSLASH,
+    KC_GRAVE,                               KC_1,                              KC_2,           KC_3,           KC_4,           KC_5,           KC_F5,                                          RESET,          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSPACE,
+    KC_TAB,                                 KC_QUOTE,                          KC_COMMA,       KC_DOT,         KC_P,           KC_Y,           KC_ESCAPE,                                      KC_INSERT,      KC_F,           KC_G,           KC_C,           KC_R,           KC_L,           KC_EQUAL,
+    LCTL_T(KC_CAPSLOCK),                   KC_A,                              KC_O,           KC_E,           KC_U,           KC_I,                                                                           KC_D,           KC_H,           KC_T,           KC_N,           KC_S,           KC_MINUS,
+    KC_LALT,                                KC_SCOLON,       KC_Q,           KC_J,           KC_K,           KC_X,           KC_PSCREEN,                                     LSFT(KC_RALT),  KC_B,           KC_M,           KC_W,           KC_V,           KC_Z,           KC_SLASH,
+    LSFT(KC_LCTRL),                         LT(6,KC_NO),    LT(2,KC_NO),    LT(9,KC_NO),    LT(5,KC_ENTER),                                                                                                 LT(2,KC_SPACE), LT(8,KC_END),   LT(10,KC_NO),   TT(1),          KC_BSLASH,
                                                                                                     KC_LGUI,        KC_PC_CUT,      LALT(KC_F4),    LALT(LCTL(KC_DELETE)),
                                                                                                                     KC_PC_COPY,     LCTL(KC_PGUP),
                                                                                     KC_LSHIFT,      KC_DELETE,      KC_PC_PASTE,    LCTL(KC_PGDOWN),KC_RGUI,        LT(4,KC_HOME)
@@ -231,13 +230,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [9] = LAYOUT_ergodox_pretty(
     //FACTORYTALK VIEW STUDIO LAYER
     M_RSS_WIN_MAN,    M_RSS_SEL,    M_RSS_ROT,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    M_RSS_VERT_SPACE,    KC_TRANSPARENT, M_RSS_COLOR_ANIM,    M_FTV_BRNG_FRNT,    M_FTV_ALGN_TOP,    ST_MACRO_53,    ST_MACRO_54,                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    ST_MACRO_55,    ST_MACRO_56,    ST_MACRO_57,    ST_MACRO_58,    ST_MACRO_59,    ST_MACRO_60,                                                                    KC_TRANSPARENT, ST_MACRO_68,    ST_MACRO_69,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    LCTL(KC_R),     ST_MACRO_61,    ST_MACRO_62,    ST_MACRO_63,    ST_MACRO_64,    ST_MACRO_65,    ST_MACRO_66,                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F4),
+    M_RSS_VERT_SPACE,    KC_TRANSPARENT, M_RSS_COLOR_ANIM,    M_FTV_BRNG_FRNT,    M_FTV_ALGN_TOP,    ST_MACRO_53,    M_FTV_ZOOM_IN,                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    M_FTV_HORZ_SPACE,    M_FTV_ALGN_LFT,    M_FTV_ALGN_CTR,    M_FTV_ALGN_RIGHT,    M_FTV_ALGN_MID,    M_FTV_FLIP_HORZ,                                                                    KC_TRANSPARENT, M_FTV_FLIP_1,    M_FTV_FLIP_0,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    LCTL(KC_R),     M_FTV_EDIT_PARAM,    KC_TRANSPARENT,    M_FTV_SND_TO_BK,    M_FTV_ALGN_BTTM,    M_FTV_FLIP_VERT,    M_FTV_ZOOM_OUT,                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F4),
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                    ST_MACRO_67,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_F6)),LCTL(KC_F6)
+                                                                                    M_FTV_GBL_PARAM,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(LSFT(KC_F6)),LCTL(KC_F6)
   ),
   [10] = LAYOUT_ergodox_pretty(
     //WINDOWS WINDOW MANAGMENT LAYER
@@ -405,15 +404,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_DQUOTES:
     if (record->event.pressed) { SEND_STRING(SS_LSFT(SS_TAP(X_QUOTE)) SS_DELAY(100) SS_LSFT(SS_TAP(X_QUOTE)) SS_DELAY(10) SS_TAP(X_LEFT)); }
     break;
-    //TEXT MACRO TO PRODUCE INSERT EQUALS EX: <= 
+    //TEXT MACRO TO PRODUCE INSERT EQUALS EX: <=
     case M_LEQ:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_LSFT(SS_TAP(X_COMMA)) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
-    //TEXT MACRO TO PRODUCE SEND EQUALS EX: => 
+    //TEXT MACRO TO PRODUCE SEND EQUALS EX: =>
     case M_GEQ:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(100) SS_LSFT(SS_TAP(X_DOT)) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
-    //TEXT MACRO TO PRODUCE COLON EQUALS EX: := 
+    //TEXT MACRO TO PRODUCE COLON EQUALS EX: :=
     case M_COLNEQU:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(10) SS_TAP(X_SPACE)); }
     break;
@@ -429,7 +428,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_REM_FILL:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_N)); }
     break;
-    //EXCEL MACRO TO PASTE ONLY COLUMN  WIDTH TO SELECTED CELLS 
+    //EXCEL MACRO TO PASTE ONLY COLUMN  WIDTH TO SELECTED CELLS
     case M_EX_PST_WDT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_W)); }
     break;
@@ -457,14 +456,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_EX_INS_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
-    //EXCEL MACRO TO INSERT ROW 
+    //EXCEL MACRO TO INSERT ROW
     case M_EX_INS_ROW :
     if (record->event.pressed) { SEND_STRING(SS_LSFT(SS_TAP(X_SPACE)) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_EQUAL)))); }
     break;
     //EXCEL MACRO TO INSERT COMMENT TO SELECTED CELL
     case M_EX_INS_CMNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_R)) SS_DELAY(100) SS_TAP(X_M)); }
-    break;  
+    break;
     //EXCEL MACRO OPEN SELECTION IN A NEW TAB IN EXCEL
     case M_EX_SEL_COL:
     if (record->event.pressed) { SEND_STRING(SS_LCTL(SS_TAP(X_C)) SS_DELAY(100) SS_LCTL(SS_TAP(X_T)) SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_ENTER)); }
@@ -509,7 +508,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_ONS:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_S)); }
     break;
-    //STUDIO 5000 CREATE LABEL IN LADDER LOGIC    
+    //STUDIO 5000 CREATE LABEL IN LADDER LOGIC
     case M_RSS_LBL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_B) SS_DELAY(100) SS_TAP(X_L)); }
     break;
@@ -521,7 +520,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_BRCH_LVL:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_INSERT) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN)  SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    //STUDIO 5000 VERIFY ROUTINE  
+    //STUDIO 5000 VERIFY ROUTINE
     case M_RSS_VFY_ROUT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_L)) SS_DELAY(100) SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_R)); }
     break;
@@ -565,7 +564,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_OTU:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_U)); }
     break;
-    //STUDIO 5000 CREATE RTO 
+    //STUDIO 5000 CREATE RTO
     case M_RSS_RTO:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_R) SS_DELAY(100) SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_O)); }
     break;
@@ -581,7 +580,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_ROT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_O)) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS VERTICALLY 
+    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS VERTICALLY
     case M_RSS_VERT_SPACE:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_V)); }
     break;
@@ -589,69 +588,80 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RSS_COLOR_ANIM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_N)) SS_DELAY(100) SS_TAP(X_C)); }
     break;
-    //FACTORYTALK VIEW SE BRING TO FRONT
+    //FACTORYTALK VIEW SE BRING SELECTED TO FRONT
     case M_FTV_BRNG_FRNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_F)); }
     break;
-    //FACTORYTALK VIEW SE ALLIGN TOP
+    //FACTORYTALK VIEW SE ALIGN TOP EDGE OF SELECTED OBJECTS
     case M_FTV_ALGN_TOP:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_T)); }
     break;
-    //FACTORYTALK VIEW SE ALLIGN TO GRID
+    //FACTORYTALK VIEW SE ALIGN SELECTED OBJECTS TO GRID
     case M_FTV_ALGN_GRID:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_N)); }
     break;
-    //FACTORYTALK VIEW SE 
-    case ST_MACRO_54:
+    //FACTORYTALK VIEW SE ZOOM IN
+    case M_FTV_ZOOM_IN:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_I)); }
     break;
-    case ST_MACRO_55:
+    //FACTORYTALK VIEW SE SPACE SELECTED ITEMS HORIZONTALLY
+    case M_FTV_HORZ_SPACE:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_H)); }
     break;
-    case ST_MACRO_56:
+    //FACTORYTALK VIEW SE ALIGN LEFT EDGE OF SELECTED OBJECTS
+    case M_FTV_ALGN_LFT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_L)); }
     break;
-    case ST_MACRO_57:
+    //FACTORYTALK VIEW SE ALIGN CENTERS OF SELECTED OBJECTS
+    case M_FTV_ALGN_CTR:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_C)); }
     break;
-    case ST_MACRO_58:
+    //FACTORYTALK VIEW SE ALIGN RIGHT EDGE OF SELECTED OBJECTS
+    case M_FTV_ALGN_RIGHT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_R)); }
     break;
-    case ST_MACRO_59:
+    //FACTORYTALK VIEW SE ALIGN MIDDLES OF SELECTED OBJECTS
+    case M_FTV_ALGN_MID:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_M)); }
     break;
-    case ST_MACRO_60:
+    //FACTORY TALK VIEW SE FLIP SELECTED OBJECT OVER CENTER HORIZONTAL AXIS
+    case M_FTV_FLIP_HORZ:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_O)); }
     break;
-    case ST_MACRO_61:
-    if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_E)) SS_DELAY(100) SS_TAP(X_UP) SS_DELAY(100) SS_TAP(X_UP) SS_DELAY(100) SS_TAP(X_UP)); }
+    //FACTORYTALK VIEW SE EDIT GLOBAL OBJECT PARAMETER VALUES
+    case M_FTV_EDIT_PARAM:
+    if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_E)) SS_DELAY(100) SS_TAP(X_UP) SS_DELAY(100) SS_TAP(X_UP) SS_DELAY(100) SS_TAP(X_UP) SS_DELAY(100) SEND_STRING(SS_TAP(X_UP)  SS_DELAY(100) SS_TAP(X_ENTER); }
     break;
-    case ST_MACRO_62:
-    if (record->event.pressed) { SEND_STRING(SS_TAP(X_UP)  SS_DELAY(100) SS_TAP(X_ENTER)); }
-    break;
-    case ST_MACRO_63:
+    //FACTORYTALK VIEW SE SEND SELECTED OBJECT TO BACK
+    case M_FTV_SND_TO_BK:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_S)); }
     break;
-    case ST_MACRO_64:
+    //FACTORYTALK VIEW SE ALIGN BOTTOM EDGE OF SELECTED OBJECTS
+    case M_FTV_ALGN_BTTM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_B)); }
     break;
-    case ST_MACRO_65:
+    //FACTORYTALK VIEW SE FLIP SELECTED OBJECT OVER CENTER VERTICAL AXIS
+    case M_FTV_FLIP_VERT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_E)); }
     break;
-    case ST_MACRO_66:
+    //FACTORYTALK VIEW SE ZOOM OUT
+    case M_FTV_ZOOM_OUT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_O)); }
     break;
-    case ST_MACRO_67:
+    //FACTORYTALK VIEW SE EDIT GLOBAL PARAMETER SETTINGS OF SELECTED OBJECT
+    case M_FTV_GBL_PARAM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_E)) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN)); }
     break;
-    case ST_MACRO_68:
+    //STUDIO 5000 FLIP A SINGLE BIT TO A '1' IN TAG EDITOR
+    case M_FTV_FLIP_1:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_1) SS_DELAY(100) SS_TAP(X_ENTER) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-    case ST_MACRO_69:
+    //STUDIO 5000 FLIP A SINGLE BIT TO A '0' IN TAG EDITOR
+    case M_FTV_FLIP_0:
     if (record->event.pressed) { SEND_STRING(SS_TAP(X_0) SS_DELAY(100) SS_TAP(X_ENTER) SS_DELAY(100) SS_TAP(X_ENTER)); }
     break;
-      
-      
+
+
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
