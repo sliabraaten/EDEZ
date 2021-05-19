@@ -601,6 +601,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FTV_ALGN_GRID:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_N)); }
     break;
+    //FACTORYTALK VIEW SE 
     case ST_MACRO_54:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_V)) SS_DELAY(100) SS_TAP(X_I)); }
     break;
