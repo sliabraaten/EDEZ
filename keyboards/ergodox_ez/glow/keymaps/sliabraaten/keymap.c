@@ -215,21 +215,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                                                      KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,
                                                                                                         KC_TRANSPARENT,          KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT
   ),
-  [8] = LAYOUT_ergodox_pretty(
+ // [8] = LAYOUT_ergodox_pretty(
     //ROCKWELL STUDIO LADDER LAYER
-    M_RSS_UPLD_PLC,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
-    M_RSS_DWNLD_PLC,         LCTL(LSFT(KC_F)),        KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,     LCTL(KC_F4),     /*|*/   M_RSS_VFY_ROUT,          KC_TRANSPARENT,               KC_TRANSPARENT,               LCTL(KC_E),                   LCTL(KC_R),                   KC_TRANSPARENT,               M_RSS_TON,
-    M_RSS_PLC_PGRM,          LCTL(LSFT(KC_S)),        KC_TRANSPARENT,          M_RSS_XIC,               M_RSS_XIO,               M_RSS_BRANCH,                        /*|*/                            M_RSS_COP,                    M_RSS_OTE,                    KC_TRANSPARENT,               M_RSS_NOP,                    KC_TRANSPARENT,               M_RSS_TOF,
-    M_RSS_PLC_RUN,           KC_TRANSPARENT,          M_RSS_ONS,               M_RSS_LBL,               M_RSS_JMP,               M_RSS_BRCH_LVL,     LCTL(KC_D),      /*|*/   M_RSS_VFY_CONT,          M_RSS_JSR,                    M_RSS_CMP,                    M_RSS_OTL,                    M_RSS_OTU,                    KC_TRANSPARENT,               M_RSS_RTO,
-    KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,                                               /*|*/                                                          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
-                                                                                                                                 KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,
-                                                                                                                                                     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,
-                                                                                                        LCTL(LSFT(KC_TAB)),      LCTL(KC_TAB),       KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT
-  ),
+ //   M_RSS_UPLD_PLC,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
+ //   M_RSS_DWNLD_PLC,         LCTL(LSFT(KC_F)),        KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,     LCTL(KC_F4),     /*|*/   M_RSS_VFY_ROUT,          KC_TRANSPARENT,               KC_TRANSPARENT,               LCTL(KC_E),                   LCTL(KC_R),                   KC_TRANSPARENT,               M_RSS_TON,
+ //   M_RSS_PLC_PGRM,          LCTL(LSFT(KC_S)),        KC_TRANSPARENT,          M_RSS_XIC,               M_RSS_XIO,               M_RSS_BRANCH,                        /*|*/                            M_RSS_COP,                    M_RSS_OTE,                    KC_TRANSPARENT,               M_RSS_NOP,                    KC_TRANSPARENT,               M_RSS_TOF,
+ //   M_RSS_PLC_RUN,           KC_TRANSPARENT,          M_RSS_ONS,               M_RSS_LBL,               M_RSS_JMP,               M_RSS_BRCH_LVL,     LCTL(KC_D),      /*|*/   M_RSS_VFY_CONT,          M_RSS_JSR,                    M_RSS_CMP,                    M_RSS_OTL,                    M_RSS_OTU,                    KC_TRANSPARENT,               M_RSS_RTO,
+ //   KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,                                               /*|*/                                                          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
+ //                                                                                                                                KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,
+ //                                                                                                                                                    KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,
+ //                                                                                                       LCTL(LSFT(KC_TAB)),      LCTL(KC_TAB),       KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT
+ // ),
   [9] = LAYOUT_ergodox_pretty(
     //FACTORYTALK VIEW STUDIO LAYER
     M_RSS_WIN_MAN,           M_RSS_SEL,               M_RSS_ROT,               KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,     KC_TRANSPARENT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
-    M_RSS_VERT_SPACE,        KC_TRANSPARENT,          M_RSS_COLOR_ANIM,        M_FTV_BRNG_FRNT,         M_FTV_ALGN_TOP,          M_FTV_ALGN_GRID,        M_FTV_ZOOM_IN,   /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
+    M_RSS_VERT_SPACE,        KC_TRANSPARENT,          M_RSS_COLOR_ANIM,        M_FTV_BRNG_FRNT,         M_FTV_ALGN_TOP,          M_FTV_ALGN_GRID,    M_FTV_ZOOM_IN,   /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
     M_FTV_HORZ_SPACE,        M_FTV_ALGN_LFT,          M_FTV_ALGN_CTR,          M_FTV_ALGN_RIGHT,        M_FTV_ALGN_MID,          M_FTV_FLIP_HORZ,                     /*|*/                            KC_TRANSPARENT,               M_FTV_FLIP_1,                 M_FTV_FLIP_0,                 KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
     LCTL(KC_R),              M_FTV_EDIT_PARAM,        KC_TRANSPARENT,          M_FTV_SND_TO_BK,         M_FTV_ALGN_BTTM,         M_FTV_FLIP_VERT,    M_FTV_ZOOM_OUT,  /*|*/   KC_TRANSPARENT,          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               LCTL(KC_F4),
     KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,          KC_TRANSPARENT,                                               /*|*/                                                          KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,               KC_TRANSPARENT,
@@ -477,7 +477,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_H)) SS_DELAY(100) SS_TAP(X_D) SS_DELAY(100) SS_TAP(X_R)); }
     break;
     //STUDIO 5000 MACRO TO UPLOAD PROGRAM FROM PLC
-    case M_RSS_UPLD_PLC:
+  /*  OPTIMIZED THIS CODE OUT TO FIND FIRMWARE SPACE case M_RSS_UPLD_PLC:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_C)) SS_DELAY(100) SS_TAP(X_U)); }
     break;
     //STUDIO 5000 MACRO TO DOWNLOAD PROGRAM FROM PLC
@@ -587,7 +587,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //FACTORYTALK VIEW SE OPEN COLOR ANIMATION MENU
     case M_RSS_COLOR_ANIM:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_N)) SS_DELAY(100) SS_TAP(X_C)); }
-    break;
+    break;*/
     //FACTORYTALK VIEW SE BRING SELECTED TO FRONT
     case M_FTV_BRNG_FRNT:
     if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_A)) SS_DELAY(100) SS_TAP(X_F)); }
